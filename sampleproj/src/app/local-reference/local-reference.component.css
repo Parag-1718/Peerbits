@@ -1,0 +1,9 @@
+
+div ul li{
+  display: block;
+  list-style-type: none;
+  cursor: pointer;
+}
+div ul li:hover{
+  background-color: cadetblue;
+}

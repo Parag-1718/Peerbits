@@ -1,0 +1,27 @@
+<h2>users component</h2>
+<div class="my-2">
+  <label>username</label>
+  <!-- <input type="text" class="form-control" name="uName"
+    (input)="getUserName($event)"
+  > -->
+  <input type="text" class="form-control" [(ngModel)]="userName">
+  <!-- <div class="my-3" [innerHTML]="userName" contenteditable="true" (input)="getUserName($event)"></div> -->
+  <p class="my-2"> {{userName}} </p>
+</div>
+<div class="my-2">
+   <button
+   class="btn btn-primary text-capitalize"
+   [disabled]="userCreatedStatus"
+   (click)="changeUserIsCreated()"
+   >add user</button>
+
+   <div *ngIf="isUserCreated; else noUser">
+     user is created with username {{userName}}
+    </div>
+    <ng-template #noUser>
+      <div class="my-2" > {{userIsCreated}} </div>
+    </ng-template>
+  </div>
+
+<app-user *ngFor="let user of users"></app-user>
+

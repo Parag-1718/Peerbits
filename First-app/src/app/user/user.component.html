@@ -1,0 +1,5 @@
+
+<!-- interpolation -->
+<p [ngStyle]="{ 'background-color': userStatus ==='online' ? 'green' :'red' }"
+  [ngClass]="{ offline: userStatus === 'offline' }"
+>{{"user"}} with ID {{userId}} is {{getUserDetails()}}</p>

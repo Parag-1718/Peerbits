@@ -1,0 +1,14 @@
+
+  <div class="my-3" *ngIf="showlist">
+        <ul>
+            <li *ngFor="let item of items" #selectedItem (click)="onItemClick(selectedItem)">{{item}}</li>
+        </ul>
+  </div>
+
+  <div class="my-3"  *ngIf="showlist">
+      <p *ngIf="selectedItem"> you selected -  {{ selectedItem.innerHTML}}</p>
+  </div>
+
+  <div class="my-3">
+    <button class="btn btn-outline-success" (click)="onToggle()">show list</button>
+  </div>
