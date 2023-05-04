@@ -1,7 +1,40 @@
 
-<app-add-user (getUserName)="adduser($event)"></app-add-user>
+<app-add-user (getUserName)="adduser($event)">
+  <button class="btn btn-danger" (click)="onDestroy()">destroy component</button>
+</app-add-user>
 
 <div class="my-3">
   <h2>user list</h2>
-  <app-user *ngFor="let user of users" [userName]="user"></app-user>
+  <app-user *ngFor="let user of users" [userName]="user" [name]="name">
+    <p #getPeragraph>user name: {{user}} !</p>
+    <button  (click)="changeName()">change name</button>
+    <p>{{name}}</p>
+  </app-user>
 </div>
+
+<div class="my-3">
+  <p highLightText>change the bacground color with custome-directive</p>
+  <p appRendererTextBg bgColor="lightblue">change the bacground color with custome-directive(with Renderer2 property)</p>
+</div>
+
+<div class="my-3" *appPgIf="displaytext">
+  <p>Dispalying text using custome structural directive</p>
+</div>
+<div>
+  <button class="btn btn-warning" (click)="toggle()">toggle conditon</button>
+</div>
+
+<!-- ngSwith example -->
+<div class="my-3" [ngSwitch]="value">
+  <p *ngSwitchCase="0">value is 0</p>
+  <p *ngSwitchCase="1">value is 1</p>
+  <p *ngSwitchCase="2">value is 2</p>
+  <p *ngSwitchCase="3">value is 3</p>
+  <p *ngSwitchCase="4">value is 4</p>
+</div>
+
+
+
+
+
+
