@@ -10,6 +10,7 @@ import { user } from './models/datatypes';
 export class AppComponent {
   title = 'angular_services';
 
+  
   users?:user[] ;
   constructor(
     private _user:UserServiceService
@@ -17,5 +18,16 @@ export class AppComponent {
 
   ngOnInit() {
     this.users = this._user.users
+  }
+  onActive(id:number,status:string) {
+      // console.log("id: " + id + " status " + status);
+      this._user.updateUser(id,status);
+  }
+  onInActive(id:number,status:string) {
+    // console.log("id: " + id + " status " + status);
+    this._user.updateUser(id,status);
+}
+  remove(id:number){
+    this._user.removeUser(id);
   }
 }

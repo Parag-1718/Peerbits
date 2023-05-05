@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { user } from '../models/datatypes';
 
 @Injectable({
@@ -15,12 +15,19 @@ export class UserServiceService {
     { name:'Mike', status: 'inactive' }
   ];
 
+  statusUpdated:EventEmitter<string> = new EventEmitter<string>();
+
   addUser(user:user){
     this.users.push(user)
     console.log(" users data: "+ this.users);
   }
 
-  updateUser(id:number){
-    this.users[id]
+  updateUser(id:number, status:string){
+    this.users[id].status = status
+    this.statusUpdated.emit(status)
+  }
+
+  removeUser(id:number){
+    this.users.splice(id, 1)
   }
 }

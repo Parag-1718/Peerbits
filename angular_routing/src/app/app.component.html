@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="mb-1 d-flex justify-content-center">
+        <button (click)="login()" *ngIf="!displayLogin">login</button>
+        <button (click)="logout()" *ngIf="displayLogin">log out</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="nav flex-column text-capitalize">
+        <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">home</a></li>
+        <li class="nav-item"><a routerLink="/users" class="nav-link" routerLinkActive="active">users</a></li>
+        <li class="nav-item"><a routerLink="/category" class="nav-link" routerLinkActive="active">categories</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+         <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
