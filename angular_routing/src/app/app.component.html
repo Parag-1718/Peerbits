@@ -2,18 +2,27 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <div class="mb-1 d-flex justify-content-center">
+      <!-- <div class="mb-1 d-flex justify-content-center">
         <button (click)="login()" *ngIf="!displayLogin">login</button>
         <button (click)="logout()" *ngIf="displayLogin">log out</button>
-      </div>
+      </div> -->
     </div>
   </div>
-  <div class="row">
+  <div class="row my-3">
     <div class="col-md-3">
       <ul class="nav flex-column text-capitalize">
+        <li class="nav-item"> <a class="nav-link auth" (click)="gotoAuth()">{{ showMenu? 'logut' : 'authentication'}}</a></li>
+        <div *ngIf="showMenu">
+
         <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">home</a></li>
         <li class="nav-item"><a routerLink="/users" class="nav-link" routerLinkActive="active">users</a></li>
         <li class="nav-item"><a routerLink="/category" class="nav-link" routerLinkActive="active">categories</a></li>
+        <li class="nav-item"><a routerLink="/templateForm" class="nav-link" routerLinkActive="active">template-form</a></li>
+        <li class="nav-item"><a routerLink="/reactiveForm" class="nav-link" routerLinkActive="active">reactive-form</a></li>
+
+        <li class="nav-item"><a [routerLink]="['/filter-pipe']" class="nav-link" routerLinkActive="active">filter-pipe</a></li>
+        <li class="nav-item"><a [routerLink]="['/post']" class="nav-link" routerLinkActive="active">post</a></li>
+      </div>
       </ul>
     </div>
     <div class="col-md-9">

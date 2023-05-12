@@ -1,0 +1,8 @@
+
+form label{
+  text-transform: capitalize;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.05);
+}

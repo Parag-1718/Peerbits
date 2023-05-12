@@ -2,3 +2,10 @@
  background-color: rgb(157, 211, 236) !important;
  color: white;
 }
+.auth
+{
+  cursor: pointer;
+}
+.auth:hover{
+  color: rgb(157, 211, 236) !important;
+}

@@ -1,0 +1,21 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <input type="text" class="form-control" [(ngModel)]="filterValue">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngFor="let user of users | filter:filterValue">
+        <div class="my-2" >
+          <div> {{"name: " + user.name | titlecase | shorten:10}}</div>
+          <div> {{"age: " + user.age}}</div>
+          <div> {{"email: " + user.email}}</div>
+          <div> {{"join date: " + user.joinDate |date:'short'}}</div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

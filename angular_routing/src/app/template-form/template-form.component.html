@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- here  without passing f reference to onFormSubmit() method we can get the form object using viewChild method -->
+            <!-- <form (ngSubmit)="onFormSubmit(f)" #f="ngForm"> -->
+            <form (ngSubmit)="onFormSubmit()" #f="ngForm">
+
+              <button class="btn btn-info" (click)="fillFormData()">Fill Form</button>
+              <div ngModelGroup="userData">
+                <div class="form-group my-2">
+                  <label  for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" required [ngModel]='username'>
+              </div>
+
+              <div class="form-group my-2">
+                  <label  for="username">email</label>
+                  <input type="email" class="form-control" id="email" name="email" required email ngModel>
+                  <span class="heip-text"
+                  *ngIf="f.controls?.['email']
+                  && f.controls?.['email']?.invalid
+                  && f.controls?.['email']?.touched"
+                  > please enter your email address
+                  </span>
+              </div>
+              </div>
+
+
+                <div class="form-group my-2">
+                    <label  for="gender">Gender</label>
+                    <select name="gender" id="gender" class="form-control" ngModel required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="">About-us</label>
+                  <textarea name="aboutUs" rows="3" class="form-control" [(ngModel)]="aboutUs"></textarea>
+                  <p> {{aboutUs}} </p>
+                </div>
+
+                <div class="mt-2">
+                    <button class="btn btn-primary" [disabled]="f.invalid">submit</button>
+                </div>
+
+                <div class="mt-3" *ngIf="isFormSubmit">
+                  <h2>userData</h2>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p> {{formData.username}} </p>
+                      <p> {{formData.email}} </p>
+                      <p> {{formData.gender}} </p>
+                      <p> {{formData.aboutUs}} </p>
+                    </div>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="addForm" (ngSubmit)="addData()">
+        <div class="form-control">
+          <label for="">username</label>
+          <input type="text" class="form-control" formControlName="username">
+        </div>
+        <div class="my-3">
+          <button class="btn btn-sm btn-primary">add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
