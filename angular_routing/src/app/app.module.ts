@@ -22,6 +22,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { UserAuthComponent } from './auth/user-auth/user-auth.component';
 import { LoadingSppinerComponent } from './shared/loading sppiner/loading-sppiner/loading-sppiner.component';
 import { TokenInterceptor } from './services/token.interceptor';
+import { AlertModelComponent } from './models/alert-model/alert-model.component';
+import { PlaceholderDirective } from './Directives/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { TokenInterceptor } from './services/token.interceptor';
     PostComponent,
     UserAuthComponent,
     LoadingSppinerComponent,
+    AlertModelComponent,
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -55,11 +59,11 @@ import { TokenInterceptor } from './services/token.interceptor';
       useClass : AuthInterceptor,
       multi:true
     },
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:TokenInterceptor,
-      multi:true
-    }
+    // {
+    //   provide:HTTP_INTERCEPTORS,
+    //   useClass:TokenInterceptor,
+    //   multi:true
+    // }
   ],
   bootstrap: [AppComponent]
 })

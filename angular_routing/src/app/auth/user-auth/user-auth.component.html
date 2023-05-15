@@ -1,7 +1,14 @@
+<ng-template appPlaceholder></ng-template>
+
 <div class="container">
-  <div class="alert alert-danger" *ngIf="error">
+  <!-- <div class="alert alert-danger" *ngIf="error">
     {{error}}
-  </div>
+  </div> -->
+
+  <!-- <div *ngIf="error">
+      <app-alert-model [message]="error" (closeBox)=" closeError() "></app-alert-model>
+  </div> -->
+
   <div *ngIf="isLoading" class="d-flex justify-content-center load align-items-center">
     <app-loading-sppiner></app-loading-sppiner>
   </div>

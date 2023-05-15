@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+import { PlaceholderDirective } from './Directives/placeholder.directive';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'angular_routing';
   showMenu = false;
+  
 
   constructor(private _userAuth: AuthService, private router: Router) {}
 

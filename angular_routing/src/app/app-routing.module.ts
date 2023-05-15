@@ -14,6 +14,7 @@ import { FormComponent } from './form/form.component';
 import { FilterPipeComponent } from './filter-pipe/filter-pipe.component';
 import { PostComponent } from './post/post.component';
 import { UserAuthComponent } from './auth/user-auth/user-auth.component';
+import { UserAuthGuard } from './services/guards/user-auth.guard';
 
 const routes: Routes = [
   {
@@ -61,7 +62,8 @@ const routes: Routes = [
   },
   {
     path:'post',
-    component:PostComponent
+    component:PostComponent,
+    canActivate:[UserAuthGuard]
   },
   {
     path:'not-found',
