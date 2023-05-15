@@ -1,0 +1,45 @@
+<div class="conatiner-fluid">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="signUpForm" (ngSubmit)="onSignUp(signUpForm)">
+            <div class="my-2">
+              <h2>register</h2>
+            </div>
+            <div class="form-group mt-2">
+              <label for="email" class="form-label">email</label>
+              <input type="email" class="form-control" name="email" formControlName="email">
+              <div class="help-text" *ngIf="email?.invalid && email?.touched">
+                <span *ngIf="email?.errors?.['required']">email is required</span>
+                <span *ngIf="email?.errors?.['email']">email is not valid</span>
+              </div>
+            </div>
+            <div class="form-group mt-2">
+              <label for="password" class="form-label">password</label>
+              <input type="password" class="form-control" name="password" formControlName="password">
+              <div class="help-text" *ngIf="password?.invalid && password?.touched">
+                <span *ngIf="password?.errors?.['required']">password is required</span>
+                <span *ngIf="password?.errors?.['minlength']">length must be greter then or equal to six</span>
+              </div>
+            </div>
+            <div class="my-3">
+              <button type="submit" class="btn btn-sm btn-info">register</button>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <a style="text-decoration: none; color: palevioletred;">Already Have an Account ?</a>
+                <button class="btn btn-sm btn-warning my-2" (click)="navigateToLogin()">login</button>
+              </div>
+              <div class="col-md-6">
+                <!-- <a href="" style="text-decoration: none; color: rgb(112, 148, 216);">Forgot Password ?</a> -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

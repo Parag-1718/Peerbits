@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+h1,h2,h3,h4,h5,h6{
+  text-transform: capitalize;
+  text-align: center;
+}
+form label
+{
+  text-transform: capitalize
+}
+form button.btn{
+  text-transform: capitalize;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid rgb(255, 0, 0,0.4);
+  background-color: rgba(255, 0, 0, 0.05);
+}
+.help-text{
+  text-transform: capitalize;
+  color: rgb(255, 0, 0,0.8);
+}
