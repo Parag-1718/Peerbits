@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let poster of posters">
+      <div class="card my-3 mx-2"
+        [routerLink]="['/search', poster.id]"
+      >
+        <img
+           src="https://image.tmdb.org/t/p/original{{ poster.poster_path }}"
+           class="card-img-top"
+           alt="Poster Image"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+

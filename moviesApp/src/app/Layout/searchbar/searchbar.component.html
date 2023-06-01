@@ -1,0 +1,14 @@
+<div class="input-group search-box" data-toggle="tooltip" data-title="{{info}}" data-placement="top">
+    <input type="text" #search class="form-control" placeholder="{{placeholder}}"
+        (keyup.enter)="searchAction(search.value)">
+    <div class="input-group-append">
+        <button class="input-group-text pointer" (click)="searchAction(search.value)">
+                  search
+        </button>
+    </div>
+</div>
+
+
+<!--
+  (mouseenter)="tooltip($event.target,'show')"  (mouseleave)="tooltip($event.target,'hide')"
+-->
