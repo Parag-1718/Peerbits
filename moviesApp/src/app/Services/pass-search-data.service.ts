@@ -17,6 +17,10 @@ export class PassSearchDataService {
     private http: HttpClient
   ) { }
 
+  // common parameters for api requests
+  params:any ={
+    api_key : this.apiKey
+  };
 
   setData(data: any) {
     this.passSearchResult.next(data);
@@ -32,9 +36,24 @@ export class PassSearchDataService {
   }
 
   getSearchDeatils(id:any){
-   const params = {
-    api_key: this.apiKey
-   }
+    let params = this.params
     return this.http.get(`${this.baseUrl}/movie/${id}`, {params})
+  }
+
+  getTrendingData(){
+    let params = this.params
+    return this.http.get(`${this.baseUrl}/trending/all/week`, {params})
+  }
+
+  TrendingMoviesOfDay(){
+    let params = this.params
+    return this.http.get(`${this.baseUrl}/trending/movie/day`,{ params})
+  }
+
+  // action
+  getActionMovies() {
+    let params = this.params
+    params.with_genres=28
+    return this.http.get(`${this.baseUrl}/discover/movie`, {params});
   }
 }

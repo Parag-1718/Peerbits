@@ -1,0 +1,39 @@
+.fullscreen-carousel {
+  height: 100%;
+  width: 100%; /* Set the carousel height to fill the viewport */
+}
+
+.picsum-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;/* Set the height to fill the carousel slide */
+  cursor: pointer;
+}
+
+.fullscreen-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and fit the image within the container */
+}
+
+
+.carousel-cell {
+  position: relative;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+}
+
+carousel{
+  z-index: 50;
+}
+

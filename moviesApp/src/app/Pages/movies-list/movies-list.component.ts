@@ -18,8 +18,17 @@ export class MoviesListComponent {
     this.moviesService.getData().subscribe({
       next:(data:any)=>{
         this.posters = data;
+
+        this.posters.forEach((item, index)=>{
+          let num = Math.floor(Math.random() * 360);
+          item.img = `https://picsum.photos/id/${num}/300/400`
+        })
       }
     })
     console.log('posters :>> ', this.posters);
+  }
+
+  addToFavorites(movie:any){
+     console.log("object: ", movie);
   }
 }

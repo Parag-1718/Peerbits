@@ -11,6 +11,7 @@ export class MoviesDetailsComponent {
 
   moviesDetails:any;
   id:any;
+  num:any;
 
   constructor(
     private moviesService: PassSearchDataService,
@@ -18,12 +19,14 @@ export class MoviesDetailsComponent {
   ){
    this.id =  activatedRoute.snapshot.params['id'];
    this.getData(this.id)
+   this.num  = this.id.slice(3)
   }
 
   getData(id: string){
     this.moviesService.getSearchDeatils(id).subscribe({
       next:(data:any)=>{
         this.moviesDetails = data;
+        this.moviesDetails.img = `https://picsum.photos/id/${this.num}/500/300`
         console.log('moviesDetails :>> ', this.moviesDetails);
       }
     })

@@ -1,1 +1,50 @@
-<p>home works!</p>
+
+<!-- Banner start -->
+<div class="">
+
+  <ngb-carousel *ngIf="images" class="fullscreen-carousel">
+
+    <ng-template ngbSlide *ngFor="let i of bannerData" >
+
+      <div class="picsum-img-wrapper" [routerLink]="['/search',i.id]">
+        <img [src]="i.img" alt="Random second slide" class="fullscreen-img" />
+      </div>
+      <div class="carousel-caption">
+        <h3 class="text-danger"> {{i.title}} </h3>
+        <p>{{i.overview}}</p>
+      </div>
+
+    </ng-template>
+
+  </ngb-carousel>
+
+</div>
+<!-- Banner ends -->
+
+<!-- trending section -->
+<div class="container-fluid">
+  <div class="my-5 bg-light">
+    <carousel [cellWidth]="250" [height]="350" [margin]="20" [arrowsTheme]="'dark'">
+      <div class=" carousel-cell" *ngFor="let i of trendingMovies" [routerLink]="['/search',i.id]">
+        <img [src]="i.img" alt="Random second slide"/>
+        <div class="movie-title">{{ i.title }}</div>
+      </div>
+    </carousel>
+  </div>
+</div>
+<!-- trending section -->
+
+<!-- action section -->
+<div class="container-fluid">
+  <div class="my-5 bg-light">
+    <carousel [cellWidth]="250" [height]="350" [margin]="30" [arrowsTheme]="'dark'">
+      <div class=" carousel-cell" *ngFor="let i of actionMovies" [routerLink]="['/search',i.id]">
+        <img [src]="i.img" alt="Random second slide"/>
+        <div class="movie-title">{{ i.title }}</div>
+      </div>
+    </carousel>
+  </div>
+</div>
+<!-- action section -->
+
+

@@ -1,1 +1,13 @@
-<p>movies-details works!</p>
+<div class="contain mt-5">
+  <div class="row p-5">
+    <div class="col-lg-2" *ngIf="moviesDetails.img">
+      <img src="{{ moviesDetails.img }}"
+      alt="poster_path">
+    </div>
+    <div class="col-lg-10 mt-5 p-4">
+      <h1 class="mt-2 mb-2">{{moviesDetails.original_title}}</h1>
+      <p class="mt-3 mb-3">{{moviesDetails.overview}}</p>
+    </div>
+
+  </div>
+</div>

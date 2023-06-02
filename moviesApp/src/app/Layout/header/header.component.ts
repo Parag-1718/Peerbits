@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding , HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,21 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   public isCollapsed = true;
 
-  searchObject(text:string){
-    console.log("searchObject:", text );
+  navbg:any;
+  scrollbar:any;
+  @HostListener('document:scroll') scrollover(){
+    console.log(document.body.scrollTop,'scrolllength#');
+
+    if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
+    {
+      this.scrollbar = true;
+      this.navbg = {
+        'background-color':'#000000'
+      }
+    }else
+    {
+        this.scrollbar = false;
+        this.navbg = {}
+    }
   }
 }

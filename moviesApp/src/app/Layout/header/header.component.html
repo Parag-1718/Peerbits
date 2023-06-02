@@ -1,31 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light text-capitalize">
+<nav [ngClass]="scrollbar ? 'navbar navbar-expand-lg bg-light fixed-top text-capitalize' : 'navbar navbar-expand-lg fixed-top text-capitalize'">
 
-  <a class="navbar-brand" [routerLink]="['/']">navbar</a>
-
-  <button class="navbar-toggler me-3" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <a class="navbar-brand ms-5 mt-2" [routerLink]="['/']">navbar</a>
 
   <div class="collapse navbar-collapse ms-1 mt-4 me-5" id="navbarColor03" [ngbCollapse]="isCollapsed">
     <div class="mx-auto">
-      <app-searchbar
-        [placeholder]="'Search Here...' ">
-      </app-searchbar>
+      <app-searchbar [placeholder]="'Search Here...'"></app-searchbar>
     </div>
 
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" >Features</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link">Pricing</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link">About</a>
       </li>
     </ul>
   </div>

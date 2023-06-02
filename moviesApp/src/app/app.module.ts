@@ -14,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     MoviesDetailsComponent,
     MoviesListComponent,
@@ -24,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
